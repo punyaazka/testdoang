@@ -8,11 +8,9 @@ require('console-stamp')(console, 'HH:MM:ss.l')
 
 /*
 HSUbot
-
 Hasanudin H Syafaat
 @hasanudinhs
 banghasan@gmail.com
-
 Support Grup Telegram @botindonesia
 */
 
@@ -48,7 +46,6 @@ function sendMessageBot(chat_id, text, parse_mode = false) {
         console.log(e)
     }
 }
-
 function sendPost(url, data) {
     try {
         axios.post(url, data)
@@ -56,7 +53,6 @@ function sendPost(url, data) {
         console.log(e)
     }
 }
-
 function sendGet(url, data) {
     try {
         axios.get(url, data)
@@ -114,55 +110,55 @@ client_bot.on('update', update => {
                     if (isClientUserStart) {
                         var photo = "https://github.com/insaneazka/insaneazka/blob/main/insaneazka1.jpg?raw=true";
                         var data = {
-    "chat_id": chat_id,
-    "reply_markup": {
-        "_": "replyMarkupInlineKeyboard",
-        "rows": [
-            [
-                {
-                    "_": "inlineKeyboardButton",
-                    "text": "Donate Me",
-                    "type": {
-                        "_": "inlineKeyboardButtonTypeUrl",
-                        "url": "http://saweria.co/insaneazka"
-                    }
-                }
-            ],
-            [
-                {
-                    "_": "inlineKeyboardButton",
-                    "text": "Github",
-                    "type": {
-                        "_": "inlineKeyboardButtonTypeUrl",
-                        "url": "http://github.com/insaneazka"
-                    }
-                },
-                {
-                    "_": "inlineKeyboardButton",
-                    "text": "Telegram",
-                    "type": {
-                        "_": "inlineKeyboardButtonTypeUrl",
-                        "url": "http://t.me/insaneazka"
-                    }
-                },
-                {
-                    "_": "inlineKeyboardButton",
-                    "text": "Youtube",
-                    "type": {
-                        "_": "inlineKeyboardButtonTypeUrl",
-                        "url": "http://saweria.co/insaneazka"
-                    }
-                }
-            ]
-        ]
-    },
-    "input_message_content": {
-        '_': "inputMessagePhoto",
-        "photo" :  tg_bot.typeFile(photo),
-        "caption": tg_bot.parseMode("Hay Perkenalkan saya bot tolong gunakan saya degan bijak yah", false, false),
-    }
-}
-tg_bot.invoke("sendMessage", data).catch(e => console.log(e))
+                            "chat_id": chat_id,
+                            "reply_markup": {
+                                "_": "replyMarkupInlineKeyboard",
+                                "rows": [
+                                    [
+                                        {
+                                            "_": "inlineKeyboardButton",
+                                            "text": "Donate Me",
+                                            "type": {
+                                                "_": "inlineKeyboardButtonTypeUrl",
+                                                "url": "http://saweria.co/insaneazka"
+                                            }
+                                        }
+                                    ],
+                                    [
+                                    {
+                                        "_": "inlineKeyboardButton",
+                                        "text": "Github",
+                                        "type": {
+                                            "_": "inlineKeyboardButtonTypeUrl",
+                                            "url": "http://github.com/insaneazka"
+                                        }
+                                        },
+                                            {
+                                            "_": "inlineKeyboardButton",
+                                            "text": "Telegram",
+                                            "type": {
+                                                "_": "inlineKeyboardButtonTypeUrl",
+                                                "url": "http://t.me/insaneazka"
+                                            }
+                                        },
+                                        {
+                                            "_": "inlineKeyboardButton",
+                                            "text": "Youtube",
+                                            "type": {
+                                                "_": "inlineKeyboardButtonTypeUrl",
+                                                "url": "http://saweria.co/insaneazka"
+                                            }
+                                        }
+                                    ]
+                                    ]
+                                    },
+                            "input_message_content": {
+                                '_': "inputMessagePhoto",
+                                "photo" :  tg_bot.typeFile(photo),
+                                "caption": tg_bot.parseMode("Hay Perkenalkan saya bot tolong gunakan saya degan bijak yah", false, false),
+                            }
+                            }
+                        tg_bot.invoke("sendMessage", data)
                     } else {
                         tg_bot.sendMessage(user_id, "Start Client UserBot Gagal!")
                     }
