@@ -162,7 +162,7 @@ client_bot.on('update', update => {
         "caption": tg_bot.parseMode("Hay Perkenalkan saya bot tolong gunakan saya degan bijak yah", false, false),
     }
 }
-tg_bot.invoke("sendMessage", data)
+tg_bot.invoke("sendMessage", data).catch(e => console.log(e))
                     } else {
                         tg_bot.sendMessage(user_id, "Start Client UserBot Gagal!")
                     }
